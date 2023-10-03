@@ -9,6 +9,9 @@ courses: { compsci: {week: 7} }
 permalink: /plans/week7
 ---
 
+**10.03.2023: Basic Plan**  
+by Gabriel Gravin, Katelyn Gelle, Daisy Zhang, and Kaden Vo
+
 # Player
 
 - Character that moves up the screen and can move left and right.
@@ -25,4 +28,4 @@ permalink: /plans/week7
 
 # Monsters
 
-- Monsters that the player has to either kill or get around.
+- Monsters that the player has to either kill or get around.  
