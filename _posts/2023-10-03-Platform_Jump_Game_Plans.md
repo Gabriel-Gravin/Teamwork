@@ -20,6 +20,7 @@ by Gabriel Gravin, Katelyn Gelle, Daisy Zhang, and Kaden Vo
 # Background
 
 - Background will move up with the player.
+- Add different backgrounds as the player gets higher.
 
 # Platform
 
@@ -29,3 +30,20 @@ by Gabriel Gravin, Katelyn Gelle, Daisy Zhang, and Kaden Vo
 # Monsters
 
 - Monsters that the player has to either kill or get around.  
+
+**10.04.2023: Updated Plan**  
+
+# Player  
+
+- We will be using a spritesheet of Link from The Legend of Zelda.
+
+# Background  
+
+- We will be using a medieval-themed stone wall.
+- We are contemplating having different backgrounds as the player progress, gradually increasing the game's difficult. However, this may be difficult to incorporate, so it's just a concept.  
+
+# Monsters  
+
+- Wizards  
+- Goblins  
+- Wolves
