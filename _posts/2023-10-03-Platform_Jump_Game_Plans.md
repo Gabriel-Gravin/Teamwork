@@ -46,4 +46,4 @@ by Gabriel Gravin, Katelyn Gelle, Daisy Zhang, and Kaden Vo
 
 - Wizards  
 - Goblins  
-- Wolves
+- Werewolves
