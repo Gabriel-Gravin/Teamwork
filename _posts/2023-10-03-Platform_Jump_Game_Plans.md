@@ -20,6 +20,7 @@ by Gabriel Gravin, Katelyn Gelle, Daisy Zhang, and Kaden Vo
 # Background
 
 - Background will move up with the player.
+- Add different backgrounds as the player gets higher.
 
 # Platform
 
