@@ -46,4 +46,16 @@ by Gabriel Gravin, Katelyn Gelle, Daisy Zhang, and Kaden Vo
 
 - Wizards  
 - Goblins  
-- Werewolves
+- Werewolves  
+
+**10.05.2023: Updated Plan**  
+
+# Player  
+
+- The player will not be able to attack. They must survive by evading the enemies.  
+
+# Monsters  
+
+- Wizard: ranged damage.  
+- Goblin: the strongest.  
+- Werewolf: the fastest.
