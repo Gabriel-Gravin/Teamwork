@@ -9,7 +9,7 @@ This team is comprised of Gabriel, Kaden, Daisy, and Katelyn.
 - Gabriel: Scrum Master. In charge of background.  
 - Kaden: Back-end Developer. In charge of player sprite.    
 - Daisy: Dev Ops. In charge of enemy sprites.  
-- Katelyn: Front-end Developer. In charge of platforms, springs, etc.  
+- Katelyn: Front-end Developer. In charge of platforms, trampolines, etc.  
 
 ## Game
 Trying to get to our game? Try this link (pun intended)!
