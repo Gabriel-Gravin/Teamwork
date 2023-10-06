@@ -46,16 +46,25 @@ by Gabriel Gravin, Katelyn Gelle, Daisy Zhang, and Kaden Vo
 
 - Wizards  
 - Goblins  
-- Werewolves  
+- Werewolves
 
-**10.05.2023: Updated Plan**  
+**10.06.2023: Plans**
 
-# Player  
+- Player: Link; may or may not be able to attack
+- Other sprites: wizard, other monsters
+- We need an HP bar!!!!
+- UNLESS we want to take it out and just have the goblin do normal damage, and any attack hitting the player will kill them
+- Background: medieval-style wall (vertical), may or may not change depending on the increasing difficulty. Ends at some point(?)
+- Also, we’ll put a high-score input, and maybe a score that keeps changing the higher the player jumps
+Could make the score change depending on how every x amount of pixels you go up you gain more “score” 
+- Platform: randomly generated within the walls, but always possible to get to the next one. Wooden? Stone?
+- Home Screen: Have a start button in order for the game to begin. Also have the latest high score you need to try to beat.
+- Other info: game will be based off the mobile game doodle jump combined with Zelda
+- Plot: Link has to get to the top of the castle to save Zelda by fighting off Ganon’s minions. 
+-  Link goes up the castle by jumping up the platforms in the castle 
+- fights off the minions either by some type of attack input/animation or by jumping on their heads like in mario 
 
-- The player will not be able to attack. They must survive by evading the enemies.  
-
-# Monsters  
-
-- Wizard: ranged damage.  
-- Goblin: the strongest.  
-- Werewolf: the fastest.
+- Monsters: (spritesheets already found) We can manipulate their AI so they always target the player without really caring about their own survival. So they can just run off the platform and die (except the wizard, who will stay in the same place and just shoot things at the player.)
+- Wizard: ranged damage
+- Goblin: most damage
+- Werewolf: fastest attacker
