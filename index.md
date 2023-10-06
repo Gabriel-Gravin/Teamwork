@@ -1,15 +1,17 @@
 ---
 layout: default
-title: Student Blog
+title: Teamwork Homepage
 ---
 
 
-## Build you Home Page here 
-This is about your journey. Start now!!!
+## Welcome to Teamwork!
+This team is comprised of Gabriel, Kaden, Daisy, and Katelyn.
+- Gabriel: Scrum Master  
+- Kaden: Back-end Developer    
+- Daisy: Dev Ops  
+- Katelyn: Front-end Developer  
 
-## Overview of Hacks, Study and Tangibles
-Blogging in GitHub pages is a way to learn and code at the same time. 
+## Game
+Trying to get to our game? Try this link (pun intended)!
 
-- Plans, Lists, [Scrum Boards](https://clickup.com/blog/scrum-board/) help you to track key events, show progress and record time.  Effort is a big part of your class grade.  Show plans and time spent!
-- [Hacks(Todo)](https://levelup.gitconnected.com/six-ultimate-daily-hacks-for-every-programmer-60f5f10feae) enable you to stay in focus with key requirements of the class.  Each Hack will produce Tangibles.
-- Tangibles or [Tangible Artifacts](https://en.wikipedia.org/wiki/Artifact_(software_development)) are things you accumulate as a learner and coder. 
+- [Teamwork Game](_notebooks\2023-10-04-sprite.ipynb)
