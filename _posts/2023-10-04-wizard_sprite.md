@@ -3,7 +3,6 @@ layout: post
 title: Wizard Sprite
 description: Creating a simple wizard sprite using Javascript.
 author: Daisy Zhang
-permalink: /basics/js-debug
 courses: {'compsci': {'week': 5}}
 type: hacks
 comments: True

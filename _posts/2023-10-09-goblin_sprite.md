@@ -3,7 +3,6 @@ layout: post
 title: Goblin Sprite
 description: Creating a simple goblin sprite using Javascript.
 author: Daisy Zhang
-permalink: /basics/js-debug
 courses: {'compsci': {'week': 6}}
 type: hacks
 comments: True
@@ -18,12 +17,12 @@ comments: True
         <div id="controls"> <!--basic radio buttons which can be used to check whether each individual animaiton works -->
             <input type="radio" name="animation" id="stomp">
             <label for="stomp">Stomp</label><br>
-            <input type="radio" name="animation" id="shoot1">
-            <label for="shoot1">Shoot Right</label><br>
-            <input type="radio" name="animation" id="shoot2">
-            <label for="shoot2">Shoot Up</label><br>
-            <input type="radio" name="animation" id="shoot3">
-            <label for="shoot3">Shoot Left</label><br>
+            <input type="radio" name="animation" id="stab1">
+            <label for="stab1">Stab Left</label><br>
+            <input type="radio" name="animation" id="stab2">
+            <label for="stab2">Stab Up</label><br>
+            <input type="radio" name="animation" id="stab3">
+            <label for="stab3">Stab Right</label><br>
             <input type="radio" name="animation" id="handstand">
             <label for="handstand">Handstand</label><br>
         </div>
@@ -98,15 +97,15 @@ comments: True
                         goblin.frameY = 0;
                         goblin.maxFrame = 10;
                         break;
-                    case 'shoot1':
+                    case 'stab1':
                         goblin.frameY = 1;
                         goblin.maxFrame = 10;
                         break;
-                    case 'shoot2':
+                    case 'stab2':
                         goblin.frameY = 2;
                         goblin.maxFrame = 10;
                         break;
-                    case 'shoot3':
+                    case 'stab3':
                         goblin.frameY = 3;
                         goblin.maxFrame = 10;
                         break;

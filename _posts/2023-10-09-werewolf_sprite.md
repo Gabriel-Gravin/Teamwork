@@ -3,7 +3,6 @@ layout: post
 title: Werewolf Sprite
 description: Creating a simple werewolf sprite using Javascript.
 author: Daisy Zhang
-permalink: /basics/js-debug
 courses: {'compsci': {'week': 6}}
 type: hacks
 comments: True
@@ -104,7 +103,7 @@ comments: True
                         break;
                     case 'run':
                         werewolf.frameY = 2;
-                        wizard.maxFrame = 7;
+                        werewolf.maxFrame = 7;
                         break;
                     case 'sprint':
                         werewolf.frameY = 3;
@@ -127,10 +126,10 @@ comments: True
             ctx.clearRect(0, 0, canvas.width, canvas.height);
 
             // Draws the current frame of the sprite.
-            wizard.draw(ctx);
+            werewolf.draw(ctx);
 
             // Updates the `frameX` property to prepare for the next frame in the sprite sheet.
-            wizard.update();
+            werewolf.update();
 
             // Uses `requestAnimationFrame` to synchronize the animation loop with the display's refresh rate,
             // ensuring smooth visuals.
