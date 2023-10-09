@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Werewolf Sprite
-description: Creating a simple werewolf sprite using Javascript.
+title: Goblin Sprite
+description: Creating a simple goblin sprite using Javascript.
 author: Daisy Zhang
 permalink: /basics/js-debug
 courses: {'compsci': {'week': 6}}
