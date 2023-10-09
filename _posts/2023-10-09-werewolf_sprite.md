@@ -4,7 +4,7 @@ title: Werewolf Sprite
 description: Creating a simple werewolf sprite using Javascript.
 author: Daisy Zhang
 permalink: /basics/js-debug
-courses: {'compsci': {'week': 5}}
+courses: {'compsci': {'week': 6}}
 type: hacks
 comments: True
 ---
@@ -39,10 +39,10 @@ comments: True
     window.addEventListener('load', function () {
         const canvas = document.getElementById('spriteContainer');
         const ctx = canvas.getContext('2d');
-        const SPRITE_WIDTH = 23.5;  // matches sprite pixel width
-        const SPRITE_HEIGHT = 23.5; // matches sprite pixel height
+        const SPRITE_WIDTH = 67.25;  // matches sprite pixel width
+        const SPRITE_HEIGHT = 81.6; // matches sprite pixel height
         const SCALE_FACTOR = 4;  // control size of sprite on canvas
-        const FRAME_LIMIT = 6;  // number of frames per row, this code assume each row is same
+        const FRAME_LIMIT = 7;  // number of frames per row, this code assume each row is same
         // const FRAME_RATE = 15;  // not used
 
         canvas.width = SPRITE_WIDTH * SCALE_FACTOR;
