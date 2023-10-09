@@ -13,23 +13,19 @@ comments: True
 <body>
     <div>
         <canvas id="spriteContainer"> <!-- Within the base div is a canvas. An HTML canvas is used only for graphics. It allows the user to access some basic functions related to the image created on the canvas (including animation) -->
-            <img id="wizardSprite" src="/student/images/werewolfsprites.png">  <!-- change sprite here -->
+            <img id="werewolfSprite" src="/student/images/werewolfsprites.png">  <!-- change sprite here -->
         </canvas>
         <div id="controls"> <!--basic radio buttons which can be used to check whether each individual animaiton works -->
-            <input type="radio" name="animation" id="idle1">
-            <label for="idle1">Idle1</label><br>
-            <input type="radio" name="animation" id="idle2">
-            <label for="idle2">Idle2</label><br>
-            <input type="radio" name="animation" id="idle3">
-            <label for="idle3">Idle3</label><br>
-            <input type="radio" name="animation" id="scare">
-            <label for="scare">Scare</label><br>
-            <input type="radio" name="animation" id="back">
-            <label for="back">Back</label><br>
-            <input type="radio" name="animation" id="skip">
-            <label for="skip">Skip</label><br>
+            <input type="radio" name="animation" id="idle">
+            <label for="idle">Idle</label><br>
             <input type="radio" name="animation" id="walk">
             <label for="walk">Walk</label><br>
+            <input type="radio" name="animation" id="run">
+            <label for="run">Run</label><br>
+            <input type="radio" name="animation" id="sprint">
+            <label for="sprint">Sprint</label><br>
+            <input type="radio" name="animation" id="jump">
+            <label for="jump">Jump</label><br>
         </div>
     </div>
 </body>
@@ -48,9 +44,9 @@ comments: True
         canvas.width = SPRITE_WIDTH * SCALE_FACTOR;
         canvas.height = SPRITE_HEIGHT * SCALE_FACTOR;
 
-        class Wizard {
+        class Werewolf {
             constructor() {
-                this.image = document.getElementById("wizardSprite");
+                this.image = document.getElementById("werewolfSprite");
                 this.spriteWidth = SPRITE_WIDTH;
                 this.spriteHeight = SPRITE_HEIGHT;
                 this.width = this.spriteWidth;
@@ -64,7 +60,7 @@ comments: True
                 this.frameY = 0;
             }
 
-            // draw wizard object
+            // draw werewolf object
             draw(context) {
                 context.drawImage(
                     this.image,
@@ -89,42 +85,34 @@ comments: True
             }
         }
 
-        // wizard object
-        const wizard = new Wizard();
+        // werewolf object
+        const werewolf = new Werewolf();
 
-        // update frameY of wizard object, action from idle, bark, walk radio control
+        // update frameY of werewolf object, action from idle, walk, run, sprint, jump radio control
         const controls = document.getElementById('controls');
         controls.addEventListener('click', function (event) {
             if (event.target.tagName === 'INPUT') {
                 const selectedAnimation = event.target.id;
                 switch (selectedAnimation) {
-                    case 'idle1':
-                        wizard.frameY = 0;
-                        wizard.maxFrame = 3;
-                        break;
-                    case 'idle2':
-                        wizard.frameY = 1;
-                        wizard.maxFrame = 3;
-                        break;
-                    case 'idle3':
-                        wizard.frameY = 2;
-                        wizard.maxFrame = 3;
-                        break;
-                    case 'scare':
-                        wizard.frameY = 3;
-                        wizard.maxFrame = 4;
-                        break;
-                    case 'back':
-                        wizard.frameY = 4;
-                        wizard.maxFrame = 4;
-                        break;
-                    case 'skip':
-                        wizard.frameY = 5;
-                        wizard.maxFrame = 12;
+                    case 'idle':
+                        werewolf.frameY = 0;
+                        werewolf.maxFrame = 7;
                         break;
                     case 'walk':
-                        wizard.frameY = 6;
+                        werewolf.frameY = 1;
+                        werewolf.maxFrame = 7;
+                        break;
+                    case 'run':
+                        werewolf.frameY = 2;
                         wizard.maxFrame = 7;
+                        break;
+                    case 'sprint':
+                        werewolf.frameY = 3;
+                        werewolf.maxFrame = 7;
+                        break;
+                    case 'jump':
+                        werewolf.frameY = 4;
+                        werewolf.maxFrame = 7;
                         break;
                     default:
                         break;

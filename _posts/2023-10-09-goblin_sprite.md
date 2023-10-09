@@ -13,7 +13,7 @@ comments: True
 <body>
     <div>
         <canvas id="spriteContainer"> <!-- Within the base div is a canvas. An HTML canvas is used only for graphics. It allows the user to access some basic functions related to the image created on the canvas (including animation) -->
-            <img id="wizardSprite" src="/student/images/werewolfsprites.png">  <!-- change sprite here -->
+            <img id="goblinSprite" src="/student/images/goblinsprites.png">  <!-- change sprite here -->
         </canvas>
         <div id="controls"> <!--basic radio buttons which can be used to check whether each individual animaiton works -->
             <input type="radio" name="animation" id="stomp">
@@ -60,7 +60,7 @@ comments: True
                 this.frameY = 0;
             }
 
-            // draw wizard object
+            // draw goblin object
             draw(context) {
                 context.drawImage(
                     this.image,
@@ -95,24 +95,24 @@ comments: True
                 const selectedAnimation = event.target.id;
                 switch (selectedAnimation) {
                     case 'stomp':
-                        wizard.frameY = 0;
-                        wizard.maxFrame = 10;
+                        goblin.frameY = 0;
+                        goblin.maxFrame = 10;
                         break;
                     case 'shoot1':
-                        wizard.frameY = 1;
-                        wizard.maxFrame = 10;
+                        goblin.frameY = 1;
+                        goblin.maxFrame = 10;
                         break;
                     case 'shoot2':
-                        wizard.frameY = 2;
-                        wizard.maxFrame = 10;
+                        goblin.frameY = 2;
+                        goblin.maxFrame = 10;
                         break;
                     case 'shoot3':
-                        wizard.frameY = 3;
-                        wizard.maxFrame = 10;
+                        goblin.frameY = 3;
+                        goblin.maxFrame = 10;
                         break;
                     case 'handstand':
-                        wizard.frameY = 4;
-                        wizard.maxFrame = 4;
+                        goblin.frameY = 4;
+                        goblin.maxFrame = 4;
                         break;
                     default:
                         break;
