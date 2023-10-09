@@ -100,27 +100,19 @@ comments: True
                         break;
                     case 'shoot1':
                         wizard.frameY = 1;
-                        wizard.maxFrame = 3;
+                        wizard.maxFrame = 10;
                         break;
                     case 'shoot2':
                         wizard.frameY = 2;
-                        wizard.maxFrame = 3;
+                        wizard.maxFrame = 10;
                         break;
                     case 'shoot3':
                         wizard.frameY = 3;
-                        wizard.maxFrame = 4;
+                        wizard.maxFrame = 10;
                         break;
-                    case 'back':
+                    case 'handstand':
                         wizard.frameY = 4;
                         wizard.maxFrame = 4;
-                        break;
-                    case 'skip':
-                        wizard.frameY = 5;
-                        wizard.maxFrame = 12;
-                        break;
-                    case 'walk':
-                        wizard.frameY = 6;
-                        wizard.maxFrame = 7;
                         break;
                     default:
                         break;
@@ -135,10 +127,10 @@ comments: True
             ctx.clearRect(0, 0, canvas.width, canvas.height);
 
             // Draws the current frame of the sprite.
-            wizard.draw(ctx);
+            goblin.draw(ctx);
 
             // Updates the `frameX` property to prepare for the next frame in the sprite sheet.
-            wizard.update();
+            goblin.update();
 
             // Uses `requestAnimationFrame` to synchronize the animation loop with the display's refresh rate,
             // ensuring smooth visuals.
