@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Rhythm Jump Minigame -- Flip or Freeze!
+title: Rhythm Jump Minigame -- Air Choreo!
 description: Jump with Link!
 author: Katelyn Gelle, Gabriel Gravin, Kaden Vo, Daisy Zhang
 courses: {'compsci': {'week': 6}}
@@ -9,12 +9,12 @@ comments: True
 ---
 
 **Directions**  
-Link is jumping on the trampoline! Press the space bar to make Link jump. If your screen says "Flip!", press the UP arrow, and Link will do a spin. If your screen says "Freeze!", don't do anything! If you press anything, Link will step off the trampoline. Let's play!
+Link is jumping on the trampoline! Press the left arrow to make Link turn left. Press the right arrow to make Link turn right. Press the up arrow to make Link turn backward. Press the down arrow to make Link spin!
 
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Flip or Freeze!</title>
+    <title>Air Choreo!</title>
 </head>
 <body>
     <canvas id="gameCanvas" width="800" height="400"></canvas>
