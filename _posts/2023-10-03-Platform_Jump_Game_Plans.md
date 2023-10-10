@@ -54,7 +54,7 @@ by Gabriel Gravin, Katelyn Gelle, Daisy Zhang, and Kaden Vo
 - Other sprites: wizard, other monsters
 - We need an HP bar!!!!
 - UNLESS we want to take it out and just have the goblin do normal damage, and any attack hitting the player will kill them
-- Background: medieval-style wall (vertical), may or may not change depending on the increasing difficulty. Ends at some point(?)
+- Background: medieval-style wall (vertical), may or may not change depending on the increasing difficulty. Ends at some point(?) Moves up with the player
 - Also, we’ll put a high-score input, and maybe a score that keeps changing the higher the player jumps
 Could make the score change depending on how every x amount of pixels you go up you gain more “score” 
 - Platform: randomly generated within the walls, but always possible to get to the next one. Wooden? Stone?
@@ -68,3 +68,5 @@ Could make the score change depending on how every x amount of pixels you go up 
 - Wizard: ranged damage
 - Goblin: most damage
 - Werewolf: fastest attacker
+- Sound effects
+- Music
