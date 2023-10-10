@@ -41,6 +41,12 @@ Link is jumping on the trampoline! Press the space bar to make Link jump. If you
         const jumpStrength = -10;
         let isJumping = false;
 
+        // Define the source rectangle for the sprite
+        const spriteSourceX = 0; // X coordinate of the top-left corner of the sprite in the sprite sheet
+        const spriteSourceY = 0; // Y coordinate of the top-left corner of the sprite in the sprite sheet
+        const spriteWidth = 96; // Width of the sprite in the sprite sheet
+        const spriteHeight = 104; // Height of the sprite in the sprite sheet
+
         // Game loop
         function gameLoop() {
             // Clear the canvas
@@ -54,14 +60,14 @@ Link is jumping on the trampoline! Press the space bar to make Link jump. If you
             spriteY += spriteVelocityY;
 
             // Check if the sprite has landed
-            if (spriteY >= canvas.height - spriteImage.height) {
-                spriteY = canvas.height - spriteImage.height;
+            if (spriteY >= canvas.height - spriteHeight) {
+                spriteY = canvas.height - spriteHeight;
                 spriteVelocityY = 0;
                 isJumping = false;
             }
 
-            // Draw the sprite
-            ctx.drawImage(spriteImage, spriteX, spriteY);
+            // Draw the sprite with the specified source rectangle
+            ctx.drawImage(spriteImage, spriteSourceX, spriteSourceY, spriteWidth, spriteHeight, spriteX, spriteY, spriteWidth, spriteHeight);
 
             requestAnimationFrame(gameLoop);
         }
