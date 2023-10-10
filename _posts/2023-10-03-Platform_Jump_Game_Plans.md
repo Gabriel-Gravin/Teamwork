@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 ---
 toc: false
 comments: true
@@ -68,5 +69,3 @@ Could make the score change depending on how every x amount of pixels you go up 
 - Wizard: ranged damage
 - Goblin: most damage
 - Werewolf: fastest attacker
-- Sound effects
-- Music
