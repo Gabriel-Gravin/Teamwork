@@ -27,31 +27,30 @@ courses: { compsci: {week: 7} }
             width: 500,
             height: 1000,
             x: 0,
-            y: 1000
+            y: -1000
         }
         var bg3 = {
             width: 500,
             height: 1000,
             x: 0,
-            y: 2000
+            y: -2000
         }
         var interval = setInterval(function() {
-            bg1.y -=5;
-            bg2.y -=5;
-            bg3.y -=5;
+            bg1.y +=5;
+            bg2.y +=5;
+            bg3.y +=5;
             if (bg1.y + bg1.height <=0) {
-                bg1.y = bg3.y + bg3.height;
+                bg1.y = bg3.y - bg3.height;
             }
             if (bg2.y + bg2.height <=0) {
-                bg2.y = bg1.y + bg1.height;
+                bg2.y = bg1.y - bg1.height;
             }
             if (bg3.y + bg3.height <=0) {
-                bg3.y = bg2.height + bg1.height;
+                bg3.y = bg2.y - bg2.height;
             }
             c.drawImage(bgImage, bg1.x, bg1.y)
             c.drawImage(bgImage, bg2.x, bg2.y)
             c.drawImage(bgImage, bg3.x, bg3.y)
         }, 50);
     };
-    
 </script>
