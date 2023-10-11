@@ -2,7 +2,7 @@
 layout: post
 title: Wizard Sprite
 description: Creating a simple wizard sprite using Javascript.
-author: Daisy Zhang
+author: Katelyn Gelle, Gabriel Gravin, Kaden Vo, Daisy Zhang
 courses: {'compsci': {'week': 5}}
 type: hacks
 comments: True

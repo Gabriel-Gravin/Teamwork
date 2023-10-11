@@ -2,7 +2,7 @@
 layout: post
 title: Goblin Sprite
 description: Creating a simple goblin sprite using Javascript.
-author: Daisy Zhang
+author: Katelyn Gelle, Gabriel Gravin, Kaden Vo, Daisy Zhang
 courses: {'compsci': {'week': 6}}
 type: hacks
 comments: True
