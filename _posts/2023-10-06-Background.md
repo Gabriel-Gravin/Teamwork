@@ -39,14 +39,14 @@ courses: { compsci: {week: 7} }
             bg1.y +=5;
             bg2.y +=5;
             bg3.y +=5;
-            if (bg1.y + bg1.height <=0) {
-                bg1.y = bg3.y - bg3.height;
+            if (bg1.y == 2000) {
+                bg1.y = 0;
             }
-            if (bg2.y + bg2.height <=0) {
-                bg2.y = bg1.y - bg1.height;
+            if (bg2.y == 1000) {
+                bg2.y = -1000;
             }
-            if (bg3.y + bg3.height <=0) {
-                bg3.y = bg2.y - bg2.height;
+            if (bg3.y == 0) {
+                bg3.y = -2000;
             }
             c.drawImage(bgImage, bg1.x, bg1.y)
             c.drawImage(bgImage, bg2.x, bg2.y)
