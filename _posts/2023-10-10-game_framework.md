@@ -201,8 +201,8 @@ backgroundImg.onload = function () {
     const defaultFilter = getComputedStyle(document.documentElement).getPropertyValue('--default-canvas-filter');
     toggleCanvasEffect.addEventListener("click", function () {
         if (isFilterEnabled) {
-            canvas.style.filter = "none";  // remove filter
-            dogCanvas.style.filter = "none";
+            canvas.style.filter = "invert(100%)";  // remove filter
+            dogCanvas.style.filter = "invert(100%)";
         } else {
             canvas.style.filter = defaultFilter; // Apply the default filter value
             dogCanvas.style.filter = defaultFilter; 
