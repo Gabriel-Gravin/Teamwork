@@ -7,7 +7,7 @@ subtitle: Katelyn Gelle
 cover-img: /images/swordplaylink.gif
 description: Link Animation Final
 type: hacks
-courses: { csse: {week: 6} }
+courses: {'compsci': {'week': 7}}
 categories: [C1.4]
 ---  
 
@@ -23,6 +23,10 @@ categories: [C1.4]
             <label for="walkfront">Walkfront</label><br>
             <input type="radio" name="animation" id="walkback">
             <label for="walkback">Walkback</label><br>
+            <input type="radio" name="animation" id="walkLeft">
+            <label for="walkLeft">walkLeft</label><br>
+            <input type="radio" name="animation" id="walkRight">
+            <label for="walkRight">walkRight</label><br>
         </div>
     </div>
 </body>
@@ -84,11 +88,19 @@ categories: [C1.4]
                         break;
                     case 'walkfront':
                         link.frameY = 4;
-                        link.maxFrame = 10;
+                        link.maxFrame = 9;
                         break;
                     case 'walkback':
                         link.frameY = 6;
-                        link.maxFrame = 10;
+                        link.maxFrame = 9;
+                        break;
+                    case 'walkLeft':
+                        link.frameY = 5;
+                        link.maxFrame = 9;
+                        break;
+                    case 'walkRight':
+                        link.frameY = 7;
+                        link.maxFrame = 9;
                         break;
                     default:
                         break;
