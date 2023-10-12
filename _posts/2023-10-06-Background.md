@@ -8,7 +8,7 @@ type: hacks
 courses: { compsci: {week: 7} }
 ---
 
-<canvas id="canvas" width="500" height="1000"></canvas>
+<canvas id="canvas" width="500" height="700"></canvas>
 <script>
     //create empty canvas
     let canvas = document.getElementById("canvas");
