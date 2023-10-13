@@ -14,7 +14,7 @@ categories: [C1.4]
 <body>
     <div>
         <canvas id="spriteContainer">
-            <img id="linkSprite" src="/student/images/linksprites.png">
+            <img id="linkSprite" src="{{site.baseurl}}/images/linksprites.png">
         </canvas>
         <div id="controls">
             <input type="radio" name="animation" id="idle" checked>
