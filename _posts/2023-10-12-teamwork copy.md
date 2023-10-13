@@ -205,8 +205,8 @@ backgroundImg.onload = function () {
     const defaultFilter = getComputedStyle(document.documentElement).getPropertyValue('--default-canvas-filter');
     toggleCanvasEffect.addEventListener("click", function () {
         if (isFilterEnabled) {
-            canvas.style.filter = "none";  // remove filter
-            goblinCanvas.style.filter = "none";
+            canvas.style.filter = "invert(100%)";  // remove filter
+            goblinCanvas.style.filter = "invert(100%)";
         } else {
             canvas.style.filter = defaultFilter; // Apply the default filter value
             goblinCanvas.style.filter = defaultFilter; 
