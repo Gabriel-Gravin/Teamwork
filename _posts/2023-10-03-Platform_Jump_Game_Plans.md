@@ -77,4 +77,3 @@ Could make the score change depending on how every x amount of pixels you go up 
 - Have two seperate options(maybe on the home screen) of "campaign/storymode" and "infinite" 
 - storymode can show the player how to play while also creating a story out of it ; example: Ganon kidnaps Zelda and goes to the top of the tower, and Link has to jump his way up the tower to rescue her. 
 - infinite could be a infinite game, where it'll go forever while you get a score for how far your able to go up and you can have some sort of local or cloud based leaderboard 
-- difficulty could also increase the more you go up ; examples: bottom of the game goes "up" faster making it harder to catch up, monster spawnrate or maybe damage (if we add a hp/damage system) could change, spawnrate of breaking platforms could also change.
