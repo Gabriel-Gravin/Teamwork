@@ -44,7 +44,7 @@ comments: False
         <label for="handstand">Handstand</label>
     </div>
     <canvas id="backgroundID">
-        <img id="backgroundImage" src="/student/images/medieval_background.jpeg" />
+        <img id="backgroundImage" src="{{site.baseurl}}/images/medieval_background.jpeg" />
     </canvas>
 </div>
 
