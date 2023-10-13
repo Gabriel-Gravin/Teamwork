@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Framework of Game
+title: Framework of Game2
 description: Game framework (sprite + background)!
 author: Katelyn Gelle, Gabriel Gravin, Kaden Vo, Daisy Zhang
 courses: {'compsci': {'week': 7}}
@@ -44,7 +44,7 @@ comments: False
         <label for="handstand">Handstand</label>
     </div>
     <canvas id="backgroundID">
-        <img id="backgroundImage" src="/student/images/medieval_background.jpeg" />
+        <img id="backgroundImage" src="{{site.baseurl}}/images/Stone_Background.jpg" />
     </canvas>
 </div>
 
@@ -55,11 +55,11 @@ comments: False
 */
 // Prepare Background Image
 const backgroundImg = new Image();
-backgroundImg.src = '/student/images/medieval_background.jpeg';  // Jekyll/Liquid puts filename here
+backgroundImg.src = '{{site.baseurl}}/images/Stone_Background.jpg';  // Jekyll/Liquid puts filename here
 
 // Prepare Sprite Image
 const goblinImg = new Image();
-goblinImg.src = '/student/images/goblinsprites.png';
+goblinImg.src = '{{site.baseurl}}/images/linksprites.png';
 
 // Prepare Canvas
 const canvas = document.getElementById("backgroundID");
@@ -77,7 +77,7 @@ backgroundImg.onload = function () {
     // Setup background constants from background image
     const WIDTH = backgroundImg.width;  // Image() width (meta data)
     const HEIGHT = backgroundImg.height; // Image() height
-    const ASPECT_RATIO = WIDTH / HEIGHT;
+    const ASPECT_RATIO = HEIGHT / WIDTH;
     const ADJUST = 1 // visual layer adjust, use "1"" for a perfect loop 
 
     // Set Dimensions to match the image width
@@ -120,10 +120,10 @@ backgroundImg.onload = function () {
     }
 
     // Setup Goblin sprite constraints
-    const SPRITE_WIDTH = 30.27;  // matches sprite pixel width
-    const SPRITE_HEIGHT = 30.2; // matches sprite pixel height
+    const SPRITE_WIDTH = 96;  // matches sprite pixel width
+    const SPRITE_HEIGHT = 104; // matches sprite pixel height
     const SPRITE_FRAMES = 10;  // matches number of frames per sprite row; this code assumes each row is the same
-    const SPRITE_SCALE = 4;  // controls the size of the sprite on the canvas
+    const SPRITE_SCALE = 2;  // controls the size of the sprite on the canvas
 
     class Goblin extends Layer {
         constructor(image, speedRatio) {
@@ -205,13 +205,8 @@ backgroundImg.onload = function () {
     const defaultFilter = getComputedStyle(document.documentElement).getPropertyValue('--default-canvas-filter');
     toggleCanvasEffect.addEventListener("click", function () {
         if (isFilterEnabled) {
-<<<<<<< HEAD
             canvas.style.filter = "none";  // remove filter
             goblinCanvas.style.filter = "none";
-=======
-            canvas.style.filter = "invert(100%)";  // remove filter
-            dogCanvas.style.filter = "invert(100%)";
->>>>>>> 1654a8b5be40f12a1f967be7cbdb7eb8c086cc78
         } else {
             canvas.style.filter = defaultFilter; // Apply the default filter value
             goblinCanvas.style.filter = defaultFilter; 
@@ -230,6 +225,7 @@ backgroundImg.onload = function () {
             switch (selectedAnimation) {
                 case 'stomp':
                     goblinObj.frameY = 0;
+                    goblinObj.maxFrame = 2;
                     break;
                 case 'stab1':
                     goblinObj.frameY = 1;
