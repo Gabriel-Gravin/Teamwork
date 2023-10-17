@@ -112,7 +112,7 @@ categories: [C1.4]
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             link.draw(ctx);
             link.update();
-             setTimeout(function() {
+            setTimeout(function() {
         requestAnimationFrame(animate);
         }, 1000 / framesPerSecond);
         }
