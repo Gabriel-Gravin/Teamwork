@@ -36,9 +36,9 @@ courses: { compsci: {week: 7} }
             y: -2000
         }
         var interval = setInterval(function() {
-            bg1.y +=5;
-            bg2.y +=5;
-            bg3.y +=5;
+            bg1.y +=3;
+            bg2.y +=3;
+            bg3.y +=3;
             if (bg1.y == 2000) {
                 bg1.y = 0;
             }
