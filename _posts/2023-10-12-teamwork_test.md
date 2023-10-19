@@ -72,7 +72,7 @@ courses: { compsci: {week: 7} }
         generateRandomPlatform();
 
         // Call the platform generation function more frequently to have more platforms
-        setInterval(generateRandomPlatform, 1500); // Decreased interval for more platforms
+        setInterval(generateRandomPlatform, 2000); // Decreased interval for more platforms
 
         // Call the top platform generation function at regular intervals
         setInterval(generateTopPlatform, 2500); // Platforms at the top every 2 seconds
