@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Freeplay Minigame !
+title: Main Game!
 description: Jump with Link!
 author: Katelyn Gelle, Gabriel Gravin, Kaden Vo, Daisy Zhang
 courses: {'compsci': {'week': 6}}
@@ -18,7 +18,9 @@ Freeplay with Link! Use "D" to make him move right, use the "A" to make him move
 </head>
 <body>
     <canvas id="gameCanvas" width="800" height="400"></canvas>
-    <script>
+    <script type="module">
+        import { Character } from './Character.js'
+        var Link = new Character();
         // Get the canvas and its 2D rendering context
         const canvas = document.getElementById('gameCanvas');
         const ctx = canvas.getContext('2d');
