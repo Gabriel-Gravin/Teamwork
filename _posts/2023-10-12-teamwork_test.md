@@ -1,0 +1,113 @@
+---
+toc: false
+comments: true
+layout: post
+title: Teamwork test
+description: A jumping platformer by the Teamwork team!
+type: hacks
+courses: { compsci: {week: 7} }
+---
+
+<canvas id="canvas" width="500" height="700"></canvas>
+<script>
+    // Create empty canvas
+    let canvas = document.getElementById("canvas");
+    let c = canvas.getContext("2d");
+
+    // Load background image
+    var bgImage = new Image();
+    bgImage.src = "{{site.baseurl}}/images/Stone_Background.jpg";
+    bgImage.onload = function () {
+        // Set up backgrounds
+        var bg1 = {
+            width: 500,
+            height: 1000,
+            x: 0,
+            y: 0
+        }
+        var bg2 = {
+            width: 500,
+            height: 1000,
+            x: 0,
+            y: -1000
+        }
+        var bg3 = {
+            width: 500,
+            height: 1000,
+            x: 0,
+            y: -2000
+        }
+
+        // Create an array to hold platform information
+        var platforms = [];
+
+        // Constants for jump behavior
+        const gravity = 0.5;
+        const jumpStrength = -10;
+
+        // Function to generate random platforms throughout the screen
+        function generateRandomPlatform() {
+            // Define the platform properties
+            var platform = {
+                width: 150,
+                height: 20,
+                x: Math.random() * (canvas.width - 150),
+                y: canvas.height - Math.random() * (canvas.height)  // Platforms appear at various vertical positions
+            };
+            platforms.push(platform);
+        }
+
+        // Function to generate platforms at the top of the screen
+        function generateTopPlatform() {
+            var platform = {
+                width: 150,
+                height: 20,
+                x: Math.random() * (canvas.width - 150),
+                y: -20  // Platforms appear at the top of the screen
+            };
+            platforms.push(platform);
+        }
+
+        // Call the platform generation function initially to ensure a platform is within jumping distance
+        generateRandomPlatform();
+
+        // Call the platform generation function more frequently to have more platforms
+        setInterval(generateRandomPlatform, 2000); // Decreased interval for more platforms
+
+        // Call the top platform generation function at regular intervals
+        setInterval(generateTopPlatform, 2500); // Platforms at the top every 2 seconds
+
+        // Main game loop
+        var interval = setInterval(function () {
+            // Move the backgrounds
+            bg1.y += 5;
+            bg2.y += 5;
+            bg3.y += 5;
+
+            if (bg1.y == 2000) {
+                bg1.y = 0;
+            }
+            if (bg2.y == 1000) {
+                bg2.y = -1000;
+            }
+            if (bg3.y == 0) {
+                bg3.y = -2000;
+            }
+
+            // Clear the canvas
+            c.clearRect(0, 0, canvas.width, canvas.height);
+
+            // Draw the background
+            c.drawImage(bgImage, bg1.x, bg1.y);
+            c.drawImage(bgImage, bg2.x, bg2.y);
+            c.drawImage(bgImage, bg3.x, bg3.y);
+
+            // Move and draw the platforms
+            platforms.forEach(function (platform) {
+                platform.y += 5;
+                c.fillStyle = "yellow";
+                c.fillRect(platform.x, platform.y, platform.width, platform.height);
+            });
+        }, 70);
+    };
+</script>
