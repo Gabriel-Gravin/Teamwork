@@ -65,11 +65,11 @@ courses: { compsci: {week: 7} }
             // Initial position of the platform
             this.position = {
                 x: 0,
-                y: 500
+                y: 450
             }
             this.image = image;
             this.width = 118;
-            this.height = 31;
+            this.height = ;
         }
         // Method to draw the platform on the canvas
         draw() {
