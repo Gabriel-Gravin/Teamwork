@@ -2,7 +2,7 @@
 toc: false
 comments: true
 layout: post
-title: Teamwork
+title: Teamwork test
 description: A jumping platformer by the Teamwork team!
 type: hacks
 courses: { compsci: {week: 7} }
@@ -55,17 +55,6 @@ courses: { compsci: {week: 7} }
                 y: canvas.height - Math.random() * (canvas.height)  // Platforms appear at various vertical positions
             };
             platforms.push(platform);
-
-            // Add a trampoline on some platforms randomly
-            if (Math.random() < 0.2) { // Adjust the probability as needed
-                var trampoline = {
-                    x: platform.x + platform.width / 2 - 10, // Adjust for the trampoline's width
-                    y: platform.y - 10, // Adjust for the trampoline's height
-                    width: 20, // Adjust to match the trampoline's width
-                    height: 5, // Adjust to match the trampoline's height
-                };
-                platforms.push(trampoline);
-            }
         }
 
         // Function to generate platforms at the top of the screen
@@ -77,27 +66,16 @@ courses: { compsci: {week: 7} }
                 y: -20  // Platforms appear at the top of the screen
             };
             platforms.push(platform);
-
-            // Add a trampoline on some platforms randomly
-            if (Math.random() < 0.2) { // Adjust the probability as needed
-                var trampoline = {
-                    x: platform.x + platform.width / 2 - 10, // Adjust for the trampoline's width
-                    y: platform.y - 10, // Adjust for the trampoline's height
-                    width: 20, // Adjust to match the trampoline's width
-                    height: 5, // Adjust to match the trampoline's height
-                };
-                platforms.push(trampoline);
-            }
         }
 
         // Call the platform generation function initially to ensure a platform is within jumping distance
         generateRandomPlatform();
 
         // Call the platform generation function more frequently to have more platforms
-        setInterval(generateRandomPlatform, 500); // Decreased interval for more platforms
+        setInterval(generateRandomPlatform, 2000); // Decreased interval for more platforms
 
         // Call the top platform generation function at regular intervals
-        setInterval(generateTopPlatform, 2000); // Platforms at the top every 2 seconds
+        setInterval(generateTopPlatform, 2500); // Platforms at the top every 2 seconds
 
         // Main game loop
         var interval = setInterval(function () {
@@ -124,23 +102,12 @@ courses: { compsci: {week: 7} }
             c.drawImage(bgImage, bg2.x, bg2.y);
             c.drawImage(bgImage, bg3.x, bg3.y);
 
-            // Move and draw the platforms, including trampolines
+            // Move and draw the platforms
             platforms.forEach(function (platform) {
-                if (platform.width === 20) {
-                    // Draw a green line for the trampoline
-                    c.strokeStyle = "cyan";
-                    c.lineWidth = 5;
-                    c.beginPath();
-                    c.moveTo(platform.x, platform.y + 5);
-                    c.lineTo(platform.x + platform.width, platform.y + 5);
-                    c.stroke();
-                } else {
-                    // Draw a yellow platform
-                    c.fillStyle = "yellow";
-                    c.fillRect(platform.x, platform.y, platform.width, platform.height);
-                }
                 platform.y += 5;
+                c.fillStyle = "yellow";
+                c.fillRect(platform.x, platform.y, platform.width, platform.height);
             });
-        }, 90);
+        }, 70);
     };
 </script>
