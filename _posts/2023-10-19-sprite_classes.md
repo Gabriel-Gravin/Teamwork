@@ -10,7 +10,7 @@ courses: { compsci: {week: 7} }
 <style>
     #canvas {
         margin: 0;
-        border: 3px solid yellow;
+        border: 3px solid pink;
     }
 </style>
 <canvas id="canvas"></canvas>
@@ -22,18 +22,18 @@ courses: { compsci: {week: 7} }
     canvas.width = 700;
     canvas.height = 700;
     // Define gravity value
-    let gravity = 3.8;
+    let gravity = 1.5;
     // Define the Player class
     class Player {
         constructor() {
             // Initial position and velocity of the player
             this.position = {
                 x: 100,
-                y: 600,
+                y: 200
             };
             this.velocity = {
                 x: 0,
-                y: 0,
+                y: 0
             };
             // Dimensions of the player
             this.width = 50;
@@ -65,31 +65,15 @@ courses: { compsci: {week: 7} }
             // Initial position of the platform
             this.position = {
                 x: 0,
-                y: 450
+                y: 500
             }
             this.image = image;
-            this.width = 118;
-            this.height = ;
+            this.width = 508;
+            this.height = 64;
         }
         // Method to draw the platform on the canvas
         draw() {
             c.drawImage(this.image, this.position.x, this.position.y, this.width, this.height);
-        }
-    }
-    class Platform2 {
-        constructor(image) {
-            // Initial position of the platform
-            this.position2 = {
-                x: 650,
-                y: 500
-            }
-            this.image2 = image2;
-            this.width2 = 508;
-            this.height2 = 64;
-        }
-        // Method to draw the platform on the canvas
-        draw() {
-            c.drawImage(this.image2, this.position2.x, this.position2.y, this.width2, this.height2);
         }
     }
     //--
@@ -97,12 +81,9 @@ courses: { compsci: {week: 7} }
     //--
     // Load platform image
     let image = new Image();
-    image.src = "{{site.baseurl}}/images/bubbleyum.png"
-    let image2 = new Image();
-    image2.src = "{{site.baseurl}}/images/starburst.png"
+    image.src = "{{site.baseurl}}/images/starburst.png"
     // Create a platform object
     let platform = new Platform(image);
-    let platform2 = new Platform(image2);
     // Create a player object
     player = new Player();
     // Define keyboard keys and their states
@@ -114,7 +95,6 @@ courses: { compsci: {week: 7} }
             pressed: false
         }
     }
-
     // Animation function to continuously update and render the canvas
     function animate() {
         requestAnimationFrame(animate);
@@ -147,11 +127,6 @@ courses: { compsci: {week: 7} }
     }
     // Start the animation loop
     animate();
-
-
-    
-
-
     // Event listener for keydown events
     addEventListener('keydown', ({ keyCode }) => {
         switch (keyCode) {
@@ -195,12 +170,4 @@ courses: { compsci: {week: 7} }
 </script>
 
 
-
-Specific Hack
-
-    Add creative “death pits” (gap between platforms) that restart game if fallen through
-
-Open Ended Hack
-
-    Experiment with different terrains (ice could cause sliding)
 
