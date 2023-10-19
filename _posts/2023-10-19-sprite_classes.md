@@ -29,7 +29,7 @@ courses: { compsci: {week: 7} }
             // Initial position and velocity of the player
             this.position = {
                 x: 100,
-                y: 200
+                y: 600
             };
             this.velocity = {
                 x: 0,
@@ -130,18 +130,22 @@ courses: { compsci: {week: 7} }
     // Event listener for keydown events
     addEventListener('keydown', ({ keyCode }) => {
         switch (keyCode) {
-            case 65:
+            case 65: //'A' key
+            case 37: //'left arrow' key
                 console.log('left');
                 keys.left.pressed = true;
                 break;
-            case 83:
+            case 83: //'S' key
+            case 40: //'down arrow' key
                 console.log('down');
                 break;
-            case 68:
+            case 68: //'D' key
+            case 39: //'right arrow' key
                 console.log('right');
                 keys.right.pressed = true;
                 break;
-            case 87:
+            case 87: //'W' key
+            case 38: //'down arrow' key
                 console.log('up');
                 player.velocity.y -= 20;
                 break;
@@ -150,18 +154,22 @@ courses: { compsci: {week: 7} }
     // Event listener for keyup events
     addEventListener('keyup', ({ keyCode }) => {
         switch (keyCode) {
-            case 65:
+            case 65: //'A' key
+            case 37: //'left arrow' key
                 console.log('left');
                 keys.left.pressed = false;
                 break;
-            case 83:
+            case 83: //'S' key
+            case 40: //'down arrow' key
                 console.log('down');
                 break;
-            case 68:
+            case 68: //'D' key
+            case 39: //'right arrow' key
                 console.log('right');
                 keys.right.pressed = false;
                 break;
-            case 87:
+            case 87: //'W' key
+            case 38: //'up arrow' key
                 console.log('up');
                 player.velocity.y = -20;
                 break;
