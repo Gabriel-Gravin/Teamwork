@@ -1,5 +1,3 @@
-import { Character } from './Character.js'
-
 class background {
     constructor() {
         this.bg1 = {
