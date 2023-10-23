@@ -8,7 +8,7 @@ comments: True
 ---
 
 **Directions**  
-Freeplay with Link! Use "D" to make him move right, use the "A" to make him move left, and use the space bar to jump.  
+Freeplay with Link! Use "D" to make him move right, use the "A" to make him move left, and use "W" to make him jump.  
 
 <!DOCTYPE html>
 <html>
