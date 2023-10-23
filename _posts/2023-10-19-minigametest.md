@@ -1,15 +1,14 @@
 ---
 layout: post
-title: Freeplay Minigame !
+title: Freeplay Minigame test !
 description: Jump with Link!
-author: Katelyn Gelle, Gabriel Gravin, Kaden Vo, Daisy Zhang
-courses: {'compsci': {'week': 6}}
+courses: {'compsci': {'week': 7}}
 type: hacks
 comments: True
 ---
 
 **Directions**  
-Freeplay with Link! Use "D" to make him move right, use the "A" to make him move left, and use the space bar to jump.  
+Freeplay with Link! Use "D" to make him move right, use the "A" to make him move left, and use "W" to make him jump.  
 
 <!DOCTYPE html>
 <html>
@@ -24,7 +23,7 @@ Freeplay with Link! Use "D" to make him move right, use the "A" to make him move
         const ctx = canvas.getContext('2d');
         // Load the background image
         const backgroundImage = new Image();
-        backgroundImage.src = '{{site.baseurl}}/images/park.jpg';
+        backgroundImage.src = '{{site.baseurl}}/images/throneroom.jpeg';
         // Load the sprite image
         const spriteImage = new Image();
         spriteImage.src = '{{site.baseurl}}/images/linksprites.png';
@@ -83,7 +82,7 @@ Freeplay with Link! Use "D" to make him move right, use the "A" to make him move
         }
         // Event listener for key downs
         window.addEventListener('keydown', (event) => {
-            if (event.key === ' ') {
+            if (event.key === 'w') {
                 jump();
             } else if (event.key === 'a') {
                 moveLeft();

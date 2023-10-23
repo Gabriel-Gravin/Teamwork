@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Freeplay Minigame !
+title: Main Game!
 description: Jump with Link!
 author: Katelyn Gelle, Gabriel Gravin, Kaden Vo, Daisy Zhang
 courses: {'compsci': {'week': 6}}
@@ -18,68 +18,49 @@ Freeplay with Link! Use "D" to make him move right, use the "A" to make him move
 </head>
 <body>
     <canvas id="gameCanvas" width="800" height="400"></canvas>
-    <script>
+    <script type="module">
+        import { Character } from '{{site.baseurl}}/assets/js/Character.js'
+        var Link = new Character('{{site.baseurl}}/images/linksprites.png', 96, 104, 100, 400 - 104, -10, .5, 2);
         // Get the canvas and its 2D rendering context
         const canvas = document.getElementById('gameCanvas');
         const ctx = canvas.getContext('2d');
         // Load the background image
         const backgroundImage = new Image();
         backgroundImage.src = '{{site.baseurl}}/images/park.jpg';
-        // Load the sprite image
-        const spriteImage = new Image();
-        spriteImage.src = '{{site.baseurl}}/images/linksprites.png';
-        // Define sprite properties
-        const spriteWidth = 96; // Width of a single sprite frame
-        const spriteHeight = 104; // Height of a single sprite frame
-        // Initial sprite position and velocity
-        let spriteX = 100;
-        let spriteY = canvas.height - spriteHeight;
-        let spriteVelocityY = 0;
-        // Constants for jump behavior
-        const gravity = 0.5;
-        const jumpStrength = -10;
-        let isJumping = false;
-        // Constants for left and right behavior
-        let frameX = 0;
-        let frameY = 0;
-        let maxFrame = 2;
-        let isMovingLeft = false;
-        let isMovingRight = false;
-        let isIdle = true;
         // Function to update sprite animation
         function updateSpriteAnimation() {
-            if (frameX < maxFrame) {
-                frameX++;
+            if (Link.frameX < Link.maxFrame) {
+                Link.frameX++;
             } else {
-                frameX = 0;
+                Link.frameX = 0;
             }
         }
         // Function to handle jumping when spacebar is pressed
         function jump() {
-            if (!isJumping) {
-                spriteVelocityY = jumpStrength;
-                isJumping = true;
+            if (!Link.isJumping) {
+                Link.spriteVelocityY = Link.jumpStrength;
+                Link.isJumping = true;
             }
         }
         // Function to handle moving left when a is pressed
         function moveLeft() {
-            isMovingLeft = true;
-            isIdle = false;
-            frameY = 5;
-            maxFrame = 9;
+            Link.isMovingLeft = true;
+            Link.isIdle = false;
+            Link.frameY = 5;
+            Link.maxFrame = 9;
         }
         // Function to handle moving right when d is pressed
         function moveRight() {
-            isMovingRight = true;
-            isIdle = false;
-            frameY = 7;
-            maxFrame = 9;
+            Link.isMovingRight = true;
+            Link.isIdle = false;
+            Link.frameY = 7;
+            Link.maxFrame = 9;
         }
         // Function to handle idle
         function idle() {
-            isIdle = true;
-            frameY = 0;
-            maxFrame = 2;
+            Link.isIdle = true;
+            Link.frameY = 0;
+            Link.maxFrame = 2;
         }
         // Event listener for key downs
         window.addEventListener('keydown', (event) => {
@@ -95,10 +76,10 @@ Freeplay with Link! Use "D" to make him move right, use the "A" to make him move
         window.addEventListener('keyup', (event) => {
             if (event.key === 'a') {
                 idle();
-                isMovingLeft = false;
+                Link.isMovingLeft = false;
             } else if (event.key === 'd') {
                 idle();
-                isMovingRight = false;
+                Link.isMovingRight = false;
             }
         })
         // Game loop
@@ -109,32 +90,32 @@ Freeplay with Link! Use "D" to make him move right, use the "A" to make him move
             // Draw the background image
             ctx.drawImage(backgroundImage, 0, 0, canvas.width, canvas.height);
             // Update sprite position based on key down left and right
-            if (isMovingLeft) {
-                spriteX -= 10;
+            if (Link.isMovingLeft) {
+                Link.spriteX -= 10;
             }
-            if (isMovingRight) {
-                spriteX += 10;
+            if (Link.isMovingRight) {
+                Link.spriteX += 10;
             }
             // Update the sprite position based on gravity
-            spriteVelocityY += gravity;
-            spriteY += spriteVelocityY;
+            Link.spriteVelocityY += Link.gravity;
+            Link.spriteY += Link.spriteVelocityY;
             // Check if the sprite has landed
-            if (spriteY >= canvas.height - spriteHeight) {
-                spriteY = canvas.height - spriteHeight;
-                spriteVelocityY = 0;
-                isJumping = false;
+            if (Link.spriteY >= canvas.height - Link.spriteHeight) {
+                Link.spriteY = canvas.height - Link.spriteHeight;
+                Link.spriteVelocityY = 0;
+                Link.isJumping = false;
             }
             // Draw the current sprite frame
             ctx.drawImage(
-                spriteImage,
-                frameX * spriteWidth, // Adjust the X-coordinate of the frame within the sprite sheet
-                frameY * spriteHeight, // The Y-coordinate within the sprite sheet (assuming Y is always 0 for frames)
-                spriteWidth, // Width of the frame
-                spriteHeight, // Height of the frame
-                spriteX, // X-coordinate where the frame is drawn on the canvas
-                spriteY, // Y-coordinate where the frame is drawn on the canvas
-                spriteWidth, // Width of the frame when drawn on the canvas
-                spriteHeight // Height of the frame when drawn on the canvas
+                Link.spriteImage,
+                Link.frameX * Link.spriteWidth, // Adjust the X-coordinate of the frame within the sprite sheet
+                Link.frameY * Link.spriteHeight, // The Y-coordinate within the sprite sheet (assuming Y is always 0 for frames)
+                Link.spriteWidth, // Width of the frame
+                Link.spriteHeight, // Height of the frame
+                Link.spriteX, // X-coordinate where the frame is drawn on the canvas
+                Link.spriteY, // Y-coordinate where the frame is drawn on the canvas
+                Link.spriteWidth, // Width of the frame when drawn on the canvas
+                Link.spriteHeight // Height of the frame when drawn on the canvas
             );
             // Update sprite animation
             updateSpriteAnimation();
