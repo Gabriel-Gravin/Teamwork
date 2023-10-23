@@ -20,7 +20,7 @@ Freeplay with Link! Use "D" to make him move right, use the "A" to make him move
     <canvas id="gameCanvas" width="800" height="400"></canvas>
     <script type="module">
         import { Character } from '{{site.baseurl}}/assets/js/Character.js'
-        var Link = new Character('{{site.baseurl}}/images/linksprites.png', 96, 104, 100, 800 - 400, -10, .5, 2);
+        var Link = new Character('{{site.baseurl}}/images/linksprites.png', 96, 104, 100, 400 - 104, -10, .5, 2);
         // Get the canvas and its 2D rendering context
         const canvas = document.getElementById('gameCanvas');
         const ctx = canvas.getContext('2d');
