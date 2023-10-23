@@ -44,7 +44,7 @@ comments: False
         <label for="handstand">Handstand</label>
     </div>
     <canvas id="backgroundID">
-        <img id="backgroundImage" src="{{site.baseurl}}/images/medieval_background.jpeg" />
+        <img id="backgroundImage" src="{{}}/images/medieval_background.jpeg" />
     </canvas>
 </div>
 
@@ -205,13 +205,8 @@ backgroundImg.onload = function () {
     const defaultFilter = getComputedStyle(document.documentElement).getPropertyValue('--default-canvas-filter');
     toggleCanvasEffect.addEventListener("click", function () {
         if (isFilterEnabled) {
-<<<<<<< HEAD
-            canvas.style.filter = "none";  // remove filter
-            goblinCanvas.style.filter = "none";
-=======
             canvas.style.filter = "invert(100%)";  // remove filter
             dogCanvas.style.filter = "invert(100%)";
->>>>>>> 1654a8b5be40f12a1f967be7cbdb7eb8c086cc78
         } else {
             canvas.style.filter = defaultFilter; // Apply the default filter value
             goblinCanvas.style.filter = defaultFilter; 
