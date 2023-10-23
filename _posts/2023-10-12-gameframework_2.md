@@ -210,13 +210,8 @@ backgroundImg.onload = function () {
     const defaultFilter = getComputedStyle(document.documentElement).getPropertyValue('--default-canvas-filter');
     toggleCanvasEffect.addEventListener("click", function () {
         if (isFilterEnabled) {
-<<<<<<< HEAD:_posts/2023-10-12-gameframework_2.md
-            canvas.style.filter = "none";  // remove filter
-            linkCanvas.style.filter = "none";
-=======
             canvas.style.filter = "invert(100%)";  // remove filter
-            goblinCanvas.style.filter = "invert(100%)";
->>>>>>> 4265fb72c50b00f8f7b706b386e348435f1880a9:_posts/2023-10-12-teamwork copy.md
+            linkCanvas.style.filter = "invert(100%)";
         } else {
             canvas.style.filter = defaultFilter; // Apply the default filter value
             linkCanvas.style.filter = defaultFilter; 
