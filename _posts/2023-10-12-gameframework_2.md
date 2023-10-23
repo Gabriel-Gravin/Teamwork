@@ -211,7 +211,11 @@ backgroundImg.onload = function () {
     toggleCanvasEffect.addEventListener("click", function () {
         if (isFilterEnabled) {
             canvas.style.filter = "invert(100%)";  // remove filter
+<<<<<<< HEAD
+            linkCanvas.style.filter = "invert(100%)";
+=======
             goblinCanvas.style.filter = "invert(100%)";
+>>>>>>> f70e2562aa112f946c7cf37a843b8e41d50d92a2
         } else {
             canvas.style.filter = defaultFilter; // Apply the default filter value
             linkCanvas.style.filter = defaultFilter; 
