@@ -18,6 +18,8 @@ Freeplay with Link! Use "D" to make him move right, use the "A" to make him move
 <body>
     <canvas id="gameCanvas" width="800" height="400"></canvas>
     <script>
+        const spawnX = 100; 
+        const spawnY = canvas.height - spriteHeight;
         // Get the canvas and its 2D rendering context
         const canvas = document.getElementById('gameCanvas');
         const ctx = canvas.getContext('2d');
@@ -45,6 +47,15 @@ Freeplay with Link! Use "D" to make him move right, use the "A" to make him move
         let isMovingLeft = false;
         let isMovingRight = false;
         let isIdle = true;
+        //Function to respawn the player at the spawn point
+        function respawnPlayer() {
+            spriteX = spawnX;
+            spriteY = spawnY
+            playerX = initalX;
+            playerY = initalY;
+            playerVelocityX = 0
+            playerVeolicityY = 0
+        }
         // Function to update sprite animation
         function updateSpriteAnimation() {
             if (frameX < maxFrame) {
@@ -122,6 +133,14 @@ Freeplay with Link! Use "D" to make him move right, use the "A" to make him move
                 spriteY = canvas.height - spriteHeight;
                 spriteVelocityY = 0;
                 isJumping = false;
+            }
+            //Check for collision with an enemy
+            if (isColldidingWithEnemy()) {
+                //Call the respawn function to reset the player's position 
+                respawnPlayer();
+            }
+            function isCollidingWithEnemy() {
+
             }
             // Draw the current sprite frame
             ctx.drawImage(
