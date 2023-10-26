@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Freeplay Minigame test !
-description: Jump with Link!
+description: jump with link!
 courses: {'compsci': {'week': 7}}
 type: hacks
 comments: True
