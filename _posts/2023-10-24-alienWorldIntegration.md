@@ -1,6 +1,6 @@
 ---
 layout: base
-title: Alien World
+title: Main Game with Integration
 image: /images/alien_planet.jpg
 images:
   background:
