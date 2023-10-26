@@ -5,15 +5,15 @@ image: /images/alien_planet.jpg
 images:
   background:
     src: /images/Stone_Background.jpg
-  link:
-    src: /images/linksprites.png
+  dog:
+    src: /images/dogSprite.png
   monkey:
     src: /images/monkeySprite.png
 ---
 
 <!-- Liquid code, run by Jekyll, used to define location of asset(s) -->
 {% assign backgroundFile = site.baseurl | append: page.images.background.src %}
-{% assign linkSpriteImage = site.baseurl | append: page.images.link.src %}
+{% assign dogSpriteImage = site.baseurl | append: page.images.dog.src %}
 {% assign monkeySpriteImage = site.baseurl | append: page.images.monkey.src %}
 
 <style>
@@ -24,12 +24,12 @@ images:
 </style>
 
 <!-- Prepare DOM elements -->
-<!-- Wrap both the link canvas and controls in a container div -->
+<!-- Wrap both the dog canvas and controls in a container div -->
 <div id="canvasContainer">
     <div id="controls"> <!-- Controls -->
         <!-- Background controls -->
         <button id="toggleCanvasEffect">Invert</button>
-        <!-- Link controls -->
+        <!-- Dog controls -->
         <input type="radio" name="animation" id="idle">
         <label for="idle">Idle</label>
         <input type="radio" name="animation" id="barking">
@@ -45,7 +45,7 @@ images:
     import Background from '{{site.baseurl}}/assets/js/alienWorld/Background.js';
     import Character from '{{site.baseurl}}/assets/js/alienWorld/Character.js';
     import Platform from '{{site.baseurl}}/assets/js/alienWorld/Platform.js';
-    import { initLink } from '{{site.baseurl}}/assets/js/alienWorld/CharacterLink.js';
+    import { initDog } from '{{site.baseurl}}/assets/js/alienWorld/CharacterDog.js';
     import { initMonkey } from '{{site.baseurl}}/assets/js/alienWorld/CharacterMonkey.js';
 
     // Create a function to load an image and return a Promise
@@ -84,9 +84,9 @@ images:
 
             // Define data for Game Objects
 
-            const [backgroundImg, linkImg, monkeyImg] = await Promise.all([
+            const [backgroundImg, dogImg, monkeyImg] = await Promise.all([
                 loadImage('{{backgroundFile}}'),
-                loadImage('{{linkSpriteImage}}'),
+                loadImage('{{dogSpriteImage}}'),
                 loadImage('{{monkeySpriteImage}}'),
             ]);
 
@@ -95,10 +95,10 @@ images:
             backgroundCanvas.id = "background";
             document.querySelector("#canvasContainer").appendChild(backgroundCanvas);
 
-            // Prepare HTML with Link Canvas
-            const linkCanvas = document.createElement("canvas");
-            linkCanvas.id = "characters";
-            document.querySelector("#canvasContainer").appendChild(linkCanvas);
+            // Prepare HTML with Dog Canvas
+            const dogCanvas = document.createElement("canvas");
+            dogCanvas.id = "characters";
+            document.querySelector("#canvasContainer").appendChild(dogCanvas);
 
             // Prepare HTML with Monkey Canvas
             const monkeyCanvas = document.createElement("canvas");
@@ -113,12 +113,12 @@ images:
             // Create Game Objects
 
             // Background object(s)
-            const backgroundSpeedRatio = 0.5
+            const backgroundSpeedRatio = 0.2
             var backgroundObj = new Background(backgroundCanvas, backgroundImg, backgroundSpeedRatio);
 
             // Character object(s)
-            const linkSpeedRatio = 0.2
-            var linkObj = initLink(linkCanvas, linkImg, linkSpeedRatio);
+            const dogSpeedRatio = 0.2
+            var dogObj = initDog(dogCanvas, dogImg, dogSpeedRatio);
             const monkeySpeedRatio = 0.7
             var monkeyObj = initMonkey(monkeyCanvas, monkeyImg, monkeySpeedRatio);
 
@@ -136,11 +136,11 @@ images:
             toggleCanvasEffect.addEventListener("click", function () {
                 if (isFilterEnabled) {  // toggle off
                     backgroundCanvas.style.filter = "none";  // remove filter
-                    linkCanvas.style.filter = "none";
+                    dogCanvas.style.filter = "none";
                     monkeyCanvas.style.filter = "none";
                 } else { // toggle on
                     backgroundCanvas.style.filter = defaultFilter; // Apply the default filter value
-                    linkCanvas.style.filter = defaultFilter;
+                    dogCanvas.style.filter = defaultFilter;
                     monkeyCanvas.style.filter = defaultFilter;
                 }
                 isFilterEnabled = !isFilterEnabled;  // switch boolean value
@@ -163,4 +163,3 @@ images:
     startGame();
   
 </script>
-
