@@ -23,11 +23,7 @@ export class Background extends GameObject {
         x: 0,
         y: -2000
     }
-    /* Update uses modulo math to cycle to start at width extent
-    *  x is position in cycle 
-    *  speed can be used to scroll faster
-    *  width is extent of background image
-    */
+    // Updates by changing the position of 3 seperate backgrounds. One on top, one in the middle, and one on the bottom.
     update() {
         this.bg1.y += this.speedRatio;
         this.bg2.y += this.speedRatio;
@@ -43,10 +39,7 @@ export class Background extends GameObject {
         }
     }
 
-    /* To draws are used to capture primary frame and wrap around ot next frame
-     * x to y is primary draw
-     * x + width to y is wrap around draw
-    */
+    // Draws the posion of each background
     draw() {
         this.ctx.drawImage(this.image, this.bg1.x, this.bg1.y)
         this.ctx.drawImage(this.image, this.bg2.x, this.bg2.y)
