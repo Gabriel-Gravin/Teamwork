@@ -13,13 +13,14 @@ comments: True
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width">
-    <title>Number Guessing Game</title>
+    <title>Dinosaur Game Parody</title>
 </head>
 <body>
     <div id="gameDiv">
         <h1 class="gameText" id="instructionText">Guess a number between 1 and 100:</h1>
         <input type="number" id="userGuess" min="1" max="100">
         <button id="guessBtn">Submit Guess</button>
+        <button id="restartBtn">Restart Game</button>
         <p class="gameText" id="resultText"></p>
     </div>
 </body>
@@ -30,9 +31,24 @@ comments: True
     const userGuessInput = document.querySelector("#userGuess");
     const resultText = document.querySelector("#resultText");
     const guessBtn = document.querySelector("#guessBtn");
+    const restartBtn = document.querySelector("#restartBtn");
     
-    const secretNumber = Math.floor(Math.random() * 100) + 1;
+    let secretNumber;
     let numberOfGuesses = 0;
+    
+    // Function to start a new game
+    function startNewGame() {
+        secretNumber = Math.floor(Math.random() * 100) + 1;
+        numberOfGuesses = 0;
+        userGuessInput.value = "";
+        userGuessInput.disabled = false;
+        guessBtn.disabled = false;
+        resultText.textContent = "";
+        instructionText.textContent = "Guess a number between 1 and 100:";
+    }
+    
+    // Initial game start
+    startNewGame();
     
     guessBtn.addEventListener("click", () => {
         const userGuess = parseInt(userGuessInput.value);
@@ -51,6 +67,8 @@ comments: True
             resultText.style.color = "red";
         }
     });
+    
+    restartBtn.addEventListener("click", startNewGame);
 </script>
 
 <style>
@@ -67,4 +85,5 @@ comments: True
         text-align: center;
     }
 </style>
+
 
