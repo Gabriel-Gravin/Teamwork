@@ -1,5 +1,5 @@
 export class Character {
-    constructor(spriteURL, spritewidth, spriteheight, x, y, jump, gravity, maxFrame) {
+    constructor(spriteURL, spritewidth, spriteheight, x, y, jump, gravity, maxFrame, movementSpeed) {
         this.frameX = 0;
         this.frameY = 0;
         this.maxFrame = maxFrame;
@@ -16,5 +16,6 @@ export class Character {
         this.spriteVelocityY = 0;
         this.gravity = gravity;
         this.jumpStrength = jump;
+        this.movementSpeed = movementSpeed;
     }
 };
