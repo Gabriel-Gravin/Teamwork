@@ -75,11 +75,11 @@ function checkScore() {
     })
 
     winningCombos.forEach(array => {
-        const crossWins = array.every(cell => 
-        allSquares[cell].firstChild?.classList.contains('cross'))
+        const circleWins = array.every(cell => 
+        allSquares[cell].firstChild?.classList.contains('circle'))
 
-        if (crossWins) {
-            infoDisplay.textContent = "Cross Wins!"
+        if (circleWins) {
+            infoDisplay.textContent = "Circle Wins!"
             allSquares.forEach(square => square.replaceWith(square.cloneNode(true)))
             return
         }
