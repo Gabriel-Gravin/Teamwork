@@ -2,7 +2,7 @@
 toc: false
 comments: false
 layout: post
-title: Tic-Tac-Toe
+title: Tic-Tac-Toe minigame
 description: Simple Tic-Tac-Toe minigame made from youtube tutorial
 type: hacks
 courses: { compsci: {week: 7} }
